@@ -1,0 +1,7 @@
+C:\Users\Artyom\source\repos\SAOD\SAOD\bin\Debug\SAOD.exe.config
+C:\Users\Artyom\source\repos\SAOD\SAOD\bin\Debug\SAOD.exe
+C:\Users\Artyom\source\repos\SAOD\SAOD\bin\Debug\SAOD.pdb
+C:\Users\Artyom\source\repos\SAOD\SAOD\obj\Debug\SAOD.csprojAssemblyReference.cache
+C:\Users\Artyom\source\repos\SAOD\SAOD\obj\Debug\SAOD.csproj.CoreCompileInputs.cache
+C:\Users\Artyom\source\repos\SAOD\SAOD\obj\Debug\SAOD.exe
+C:\Users\Artyom\source\repos\SAOD\SAOD\obj\Debug\SAOD.pdb
