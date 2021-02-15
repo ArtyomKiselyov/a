@@ -13,7 +13,9 @@ namespace SAOD
         public static int[,] matrix;
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите ширину матрицы");
             width = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите высоту матрицы");
             height = Convert.ToInt32(Console.ReadLine());
             matrix = new int[width, height];
             Random rand = new Random();
@@ -29,7 +31,9 @@ namespace SAOD
                 }
             }
             DrawMatrix();
+            Console.WriteLine("Введите координату X точки начала");
             int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите координату Y точки начала");
             int y = Convert.ToInt32(Console.ReadLine());
             if (matrix[x, y] == 0)
             {
