@@ -5,3 +5,10 @@ C:\Users\Artyom\source\repos\SAOD\SAOD\obj\Debug\SAOD.csprojAssemblyReference.ca
 C:\Users\Artyom\source\repos\SAOD\SAOD\obj\Debug\SAOD.csproj.CoreCompileInputs.cache
 C:\Users\Artyom\source\repos\SAOD\SAOD\obj\Debug\SAOD.exe
 C:\Users\Artyom\source\repos\SAOD\SAOD\obj\Debug\SAOD.pdb
+C:\Users\KAR.19\source\repos\SAOD\SAOD\bin\Debug\SAOD.exe.config
+C:\Users\KAR.19\source\repos\SAOD\SAOD\bin\Debug\SAOD.exe
+C:\Users\KAR.19\source\repos\SAOD\SAOD\bin\Debug\SAOD.pdb
+C:\Users\KAR.19\source\repos\SAOD\SAOD\obj\Debug\SAOD.csprojAssemblyReference.cache
+C:\Users\KAR.19\source\repos\SAOD\SAOD\obj\Debug\SAOD.csproj.CoreCompileInputs.cache
+C:\Users\KAR.19\source\repos\SAOD\SAOD\obj\Debug\SAOD.exe
+C:\Users\KAR.19\source\repos\SAOD\SAOD\obj\Debug\SAOD.pdb

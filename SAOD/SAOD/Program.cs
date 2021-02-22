@@ -11,6 +11,7 @@ namespace SAOD
         public static int width;
         public static int height;
         public static int[,] matrix;
+        public static MyStack<KeyValuePair<int, int>> stack = new MyStack<KeyValuePair<int, int>>();
         static void Main(string[] args)
         {
             Console.WriteLine("Введите ширину матрицы");
@@ -35,9 +36,11 @@ namespace SAOD
             int x = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите координату Y точки начала");
             int y = Convert.ToInt32(Console.ReadLine());
+            var coordinates = new KeyValuePair<int, int>(x, y);
+            
             if (matrix[x, y] == 0)
             {
-                Fill(x, y);
+                Fill(coordinates);
             }
             DrawMatrix();
         }
@@ -53,24 +56,34 @@ namespace SAOD
             }
             Count();
         }
-        static void Fill(int x, int y)
+        static void Fill(KeyValuePair<int,int> coordinates)
         {
-            matrix[x, y] = 2;
-            if (x + 1 < width && matrix[x + 1, y] == 0)
+            stack.Push(coordinates);
+            while(!stack.IsEmpty)
             {
-                Fill(x + 1, y);
-            }
-            if (y - 1 >= 0 && matrix[x, y - 1] == 0)
-            {
-                Fill(x, y - 1);
-            }
-            if (x - 1 >= 0 && matrix[x - 1, y] == 0)
-            {
-                Fill(x - 1, y);
-            }
-            if (y + 1 < height && matrix[x, y + 1] == 0)
-            {
-                Fill(x, y + 1);
+                var t = stack.Peek();
+                stack.Pop();
+                matrix[t.Key, t.Value] = 2;
+                if (t.Key + 1 < width && matrix[t.Key + 1, t.Value] == 0)
+                {
+                    coordinates = new KeyValuePair<int, int>(t.Key + 1, t.Value);
+                    stack.Push(coordinates);
+                }
+                if (t.Value - 1 >= 0 && matrix[t.Key, t.Value - 1] == 0)
+                {
+                    coordinates = new KeyValuePair<int, int>(t.Key, t.Value - 1);
+                    stack.Push(coordinates);
+                }
+                if (t.Key - 1 >= 0 && matrix[t.Key - 1, t.Value] == 0)
+                {
+                    coordinates = new KeyValuePair<int, int>(t.Key - 1, t.Value);
+                    stack.Push(coordinates);
+                }
+                if (t.Value + 1 < height && matrix[t.Key, t.Value + 1] == 0)
+                {
+                    coordinates = new KeyValuePair<int, int>(t.Key, t.Value + 1);
+                    stack.Push(coordinates);
+                }
             }
         }
         static void Count()
@@ -80,7 +93,7 @@ namespace SAOD
             {
                 for (int j = 0; j < height; j++)
                 {
-                    if (matrix[i,j] == 0) count0++;
+                    if (matrix[i, j] == 0) count0++;
                     else if (matrix[i, j] == 1) count1++;
                     else if (matrix[i, j] == 2) count2++;
                 }
