@@ -1,0 +1,7 @@
+C:\Users\Artyom\source\repos\СalcWithStack\СalcWithStack\bin\Debug\СalcWithStack.exe.config
+C:\Users\Artyom\source\repos\СalcWithStack\СalcWithStack\bin\Debug\СalcWithStack.exe
+C:\Users\Artyom\source\repos\СalcWithStack\СalcWithStack\bin\Debug\СalcWithStack.pdb
+C:\Users\Artyom\source\repos\СalcWithStack\СalcWithStack\obj\Debug\СalcWithStack.csprojAssemblyReference.cache
+C:\Users\Artyom\source\repos\СalcWithStack\СalcWithStack\obj\Debug\СalcWithStack.csproj.CoreCompileInputs.cache
+C:\Users\Artyom\source\repos\СalcWithStack\СalcWithStack\obj\Debug\СalcWithStack.exe
+C:\Users\Artyom\source\repos\СalcWithStack\СalcWithStack\obj\Debug\СalcWithStack.pdb
