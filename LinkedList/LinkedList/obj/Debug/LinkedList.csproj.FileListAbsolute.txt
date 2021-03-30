@@ -1,0 +1,14 @@
+C:\Users\Artyom\source\repos\LinkedList\LinkedList\bin\Debug\LinkedList.exe.config
+C:\Users\Artyom\source\repos\LinkedList\LinkedList\bin\Debug\LinkedList.exe
+C:\Users\Artyom\source\repos\LinkedList\LinkedList\bin\Debug\LinkedList.pdb
+C:\Users\Artyom\source\repos\LinkedList\LinkedList\obj\Debug\LinkedList.csprojAssemblyReference.cache
+C:\Users\Artyom\source\repos\LinkedList\LinkedList\obj\Debug\LinkedList.csproj.CoreCompileInputs.cache
+C:\Users\Artyom\source\repos\LinkedList\LinkedList\obj\Debug\LinkedList.exe
+C:\Users\Artyom\source\repos\LinkedList\LinkedList\obj\Debug\LinkedList.pdb
+C:\Users\kar.19\Desktop\LinkedList\LinkedList\bin\Debug\LinkedList.exe.config
+C:\Users\kar.19\Desktop\LinkedList\LinkedList\bin\Debug\LinkedList.exe
+C:\Users\kar.19\Desktop\LinkedList\LinkedList\bin\Debug\LinkedList.pdb
+C:\Users\kar.19\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.csprojAssemblyReference.cache
+C:\Users\kar.19\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.csproj.CoreCompileInputs.cache
+C:\Users\kar.19\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.exe
+C:\Users\kar.19\Desktop\LinkedList\LinkedList\obj\Debug\LinkedList.pdb
