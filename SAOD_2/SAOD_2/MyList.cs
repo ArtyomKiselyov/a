@@ -7,89 +7,160 @@ using System.Threading.Tasks;
 
 namespace SAOD_2
 {
-    class MyList<T>
+    class MyList<T> : IEnumerable
     {
-        private T[] list;
-        private int count;
-        const int n = 10;
-        private T v;
-        public MyList()
+        static int size = 0;
+        static T[] array = new T[size];
+        static int cop = 1;
+
+        public IEnumerator GetEnumerator()
         {
-            list = new T[n];
+            if (size > 0)
+            {
+                for (int i = 0; i < size; i++)
+                    yield return array[i];
+            }
         }
-        public bool IsEmpty
-        {
-            get { return count == 0; }
-        }
-        public int Count
-        {
-            get { return count; }
-        }
+
         public void Add(T item)
         {
-            if (count == list.Length)
-                Array.Resize(ref list, count + 1);
-            list[count++] = item;
+            size += 1;
+            if (size < cop)
+            {
+                array[size-1] = item;
+            }
+            else
+            {
+                cop = cop * 2;
+                Array.Resize<T>(ref array, cop);
+                array[size-1] = item;
+            }
         }
-        public T Last()
-        {
-            return list[count - 1];
-        }
-        public T First()
-        {
-            return list[0];
-        }
-        public void Clear()
-        {
-            Array.Resize(ref list, count - count);
-            count = 0;
-        }
+
         public void Insert(int index, T item)
         {
-            T temp = list[0];
-            Array.Resize(ref list, count + 1);
-            list[count] = list[0];
-            for (int i = index; i < count; i++)
+            if (index >= size)
             {
-                temp = list[i + 1];
-                list[i + 1] = list[index];
-                list[index] = temp;
+                Add(item);
             }
-            count++;
-            list[index] = item;
+            else
+            {
+                T temp = array[0];
+                if (size >= cop)
+                {
+                    cop = cop * 2;
+                    Array.Resize<T>(ref array, cop);
+                }
+                size += 1;
+                array[size] = array[0];
+                for (int i = index; i < size; i++)
+                {
+                    temp = array[i + 1];
+                    array[i + 1] = array[index];
+                    array[index] = temp;
+                }
+                array[index] = item;
+            }
         }
+
         public void RemoveAt(int index)
         {
-            T temp = list[0];
-
-            for (int i = count; i > index; i--)
+            T temp = array[0];
+            for (int i = size; i > index; i--)
             {
-                temp = list[i - 1];
-                list[i - 1] = list[index];
-                list[index] = temp;
+                temp = array[i - 1];
+                array[i - 1] = array[index];
+                array[index] = temp;
             }
-            Array.Resize(ref list, list.Length - 1);
-            count--;
+            size--;
         }
-        public void Write()
+
+        public T Last
         {
-            for (int i = 0; i < count; i++)
+            get { return array[size - 1]; }
+            set { array[size - 1] = value; }
+            
+        }
+
+        public T First
+        {
+            get { return array[0]; }
+            set { array[0] = value; }
+        }
+
+        public void Clear()
+        {
+            Array.Resize<T>(ref array, 0);
+            size = 0;
+        }
+
+        public int Size
+        {
+            get { return size; }
+            set { size = value; }
+        }
+
+        public bool Contains(T item)
+        {
+            foreach (var i in array)
             {
-                Console.WriteLine(list[i]);
+                if (item.Equals(i)) 
+                {
+                    return true;
+                } 
             }
+            return false;
+        }
+
+        public int IndexOf(T item)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                if (array[i].Equals(item))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void ForEach(Action<T> action)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                action(array[i]);
+            }
+        }
+
+        public T Find(Predicate<T> match)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                if (match(array[i]))
+                {
+                    return array[i];
+                }
+            }
+            return default(T);
+        }
+
+        public int FindIndex(Predicate<T> match)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                if (match(array[i]))
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
         public T this[int index]
         {
-            get { return v; }
-            set { v = list[index]; }
+            get { return array[index]; }
+            set { array[index] = value; }
         }
-        public IEnumerator<T> GetEnumerator()
-        {
-            yield return (T)list.GetEnumerator();
-        }
-        public int IndexOf(T item)
-        {
-            return 0;
-        }
+
     }
 }
+
